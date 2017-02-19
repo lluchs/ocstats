@@ -1,0 +1,14 @@
+set terminal svg
+set output 'knüppeln-champs.svg'
+
+set style data histogram
+set style fill solid
+
+set colorsequence podo
+unset key
+set xtics rotate by -45
+set grid ytics
+set yrange [0:]
+set title 'Knüppeln Champ Selection'
+
+plot '<&5' using 2:xticlabels(1)
