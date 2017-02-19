@@ -1,2 +1,4 @@
 *.sqlite
 *.svg
+
+/gh-pages
