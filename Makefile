@@ -1,7 +1,5 @@
 # Statistics from OC games!
 
-SHELL = /bin/bash
-
 GRAPHS := knüppeln-champs.svg
 
 all: $(GRAPHS)
@@ -9,8 +7,8 @@ all: $(GRAPHS)
 statistics.sqlite:
 	curl 'http://league.openclonk.org/statistics.sqlite' -o $@
 
-knüppeln-champs.svg: statistics.sqlite knüppeln-champs.gpi knüppeln-champs.sql
-	gnuplot -d knüppeln-champs.gpi
+%.svg: %.gpi %.sql statistics.sqlite
+	gnuplot -d $<
 
 # Deployment to gh-pages
 gh-pages:
