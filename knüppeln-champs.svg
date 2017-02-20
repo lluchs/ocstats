@@ -229,7 +229,7 @@
 		<text><tspan font-family="Arial" >Knüppeln Champ Selection</tspan></text>
 	</g>
 </g>
-	<g id="gnuplot_plot_1" ><title>'&lt;&amp;5' using 2:xticlabels(1)</title>
+	<g id="gnuplot_plot_1" ><title>frequency of selection</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g stroke='none' shape-rendering='crispEdges'>
 		<polygon fill = 'rgb(  0,   0,   0)' points = '86.3,379.9 100.0,379.9 100.0,74.4 86.3,74.4 '/>
