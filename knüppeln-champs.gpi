@@ -11,4 +11,4 @@ set grid ytics
 set yrange [0:]
 set title 'Knüppeln Champ Selection'
 
-plot '<&5' using 2:xticlabels(1)
+plot '< sqlite3 -separator " " statistics.sqlite < knüppeln-champs.sql' using 2:xticlabels(1)
