@@ -1,0 +1,14 @@
+set terminal svg
+set output 'knüppeln-spellusage.svg'
+
+set style data histogram
+set style fill solid
+
+set colorsequence podo
+set xtics rotate by -45
+set grid ytics
+set yrange [0:]
+set ylabel 'casts per life'
+set title 'Knüppeln Spell Usage'
+
+plot for [i=2:8] '< sqlite3 -header -separator " " statistics.sqlite < knüppeln-spellusage.sql' using (column(i) / column(9)):xticlabels(1) title columnheader(i)

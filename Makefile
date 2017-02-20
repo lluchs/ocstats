@@ -1,6 +1,6 @@
 # Statistics from OC games!
 
-GRAPHS := knüppeln-champs.svg knüppeln-kd.svg
+GRAPHS := knüppeln-champs.svg knüppeln-kd.svg knüppeln-spellusage.svg
 
 all: $(GRAPHS)
 
