@@ -4,6 +4,8 @@ SHELL = /bin/bash
 
 GRAPHS := knüppeln-champs.svg
 
+all: $(GRAPHS)
+
 statistics.sqlite:
 	curl 'http://league.openclonk.org/statistics.sqlite' -o $@
 
@@ -20,4 +22,7 @@ deploy: gh-pages $(GRAPHS)
 	git -C gh-pages commit -m 'Update graphs'
 	git -C gh-pages push origin gh-pages
 
-.PHONY: deploy
+clean:
+	rm -f $(GRAPHS) statistics.sqlite
+
+.PHONY: all, deploy, clean
