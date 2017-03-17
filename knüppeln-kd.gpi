@@ -12,12 +12,8 @@ set grid ytics
 set yrange [0:]
 set title 'Knüppeln Kills and Deaths'
 
-plot newhistogram 'overall', \
-         '< sqlite3 -separator " " statistics.sqlite < knüppeln-kd.sql' using 2:xticlabels(1) title 'kills', \
-         '' using 3:xticlabels(1) title 'deaths', \
-     newhistogram 'normalized by selection frequency', \
-	      '' using 4:xticlabels(1) title 'normalized kills', \
-          '' using 5:xticlabels(1) title 'normalized deaths'
+plot '< sqlite3 -separator " " statistics.sqlite < knüppeln-kd.sql' using 2:xticlabels(1) title 'kills', \
+     '' using 3:xticlabels(1) title 'deaths'
 
 unset yrange
 set xzeroaxis linetype 1
@@ -25,4 +21,4 @@ set title 'K/D Ratio'
 unset key
 set grid xtics
 set boxwidth 0.2
-plot '' using 0:(column(4) / column(5)):($2 < 1 ? 2 : 4):xticlabels(1) with boxes lc variable title 'kills - deaths'
+plot '' using 0:(column(2) / column(3)):($2 < 1 ? 2 : 4):xticlabels(1) with boxes lc variable title 'kills - deaths'
